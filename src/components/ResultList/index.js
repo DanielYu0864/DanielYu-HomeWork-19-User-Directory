@@ -5,6 +5,7 @@ function AllResultList(props) {
   const results = props.results;
   console.log(props.results)
   return (
+    // <h1>List</h1>
     <>
       {
         results.map((result, i) => (

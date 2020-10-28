@@ -8,6 +8,6 @@ export default {
   },
   // Gets users by gender
   getUsersByGender: function(gender) {
-    return axios.get('https://randomuser.me/api/?results=50&nat=us&gender=' + gender);
+    return axios.get('https://randomuser.me/api/?results=25&nat=us&gender=' + gender);
   },
 };
