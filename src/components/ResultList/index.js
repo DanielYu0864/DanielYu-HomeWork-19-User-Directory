@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 function ResultList(props) {
+
   return (
     <ol className='list-group'>
       <img src={ props.picture.large }/>

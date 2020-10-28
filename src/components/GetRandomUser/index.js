@@ -16,7 +16,7 @@ class GetRandomUser extends Component {
   renderUserInfo = () => {
     API.getRandomUser()
       .then(res => {
-        console.log(res.data.results[0]);
+        console.log(res.data.results);
         this.setState({ result: res.data.results[0] })
       })
       .catch(err => console.log(err));
