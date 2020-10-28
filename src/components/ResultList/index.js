@@ -1,17 +1,26 @@
-import React from 'react';
-import './style.css';
-function ResultList(props) {
+import React from 'react'
+import './style.css'
+function AllResultList(props) {
 
+  const results = props.results;
+  console.log(props.results)
   return (
-    <ol className='list-group'>
-      <img src={ props.picture.large }/>
-      <li className='list-group-items'>Name: <span>{ props.name.first } { props.name.last }</span></li>
-      <li className='list-group-items'>Gender: <span>{ props.gender }</span></li>
-      <li className='list-group-items'>Email: <span>{ props.email }</span></li>
-      <li className='list-group-items'>Phone: <span>{ props.phone }</span></li>
-      <li className='list-group-items'>location: <span>{ props.location.city }, { props.location.state }</span></li>
-    </ol>
+    <>
+      {
+        results.map((result, i) => (
+          <ul className='list-group' key={ result.id.value } >
+            <li className='list-group-items'>List { i + 1 }</li>
+            <img src={ result.picture.large }/>
+            <li className='list-group-items'>Name: <span>{result.name.first} {result.name.last}</span></li>
+            <li className='list-group-items'>Gender: <span>{ result.gender }</span></li>
+            <li className='list-group-items'>Email: <span>{ result.email }</span></li>
+            <li className='list-group-items'>Phone: <span>{ result.phone }</span></li>
+            <li className='list-group-items'>location: <span>{ result.location.city }, { result.location.state }</span></li>
+          </ul>
+        ))
+      }
+    </>
   )
 }
 
-export default React.memo(ResultList);
+export default AllResultList;

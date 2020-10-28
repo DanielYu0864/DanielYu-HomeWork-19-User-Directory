@@ -14,7 +14,7 @@ class GetRandomUser extends Component {
   }
 
   renderUserInfo = () => {
-    API.getRandomUser()
+    API.getAllUsers()
       .then(res => {
         console.log(res.data.results);
         this.setState({ result: res.data.results[0] })
@@ -31,14 +31,7 @@ class GetRandomUser extends Component {
     return (
       <div>
         <h1>Random User</h1>
-        <ResultList
-          picture={ result.picture }
-          gender={result.gender}
-          name={ result.name }
-          email={result.email}
-          phone={ result.phone }
-          location={ result.location }
-        />
+        <ResultList results={ [result] }/>
       </div>
     )
   }

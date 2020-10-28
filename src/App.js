@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <h1>Main Page</h1>
-      {/* <GetRandomUser/> */}
-      <GetAllUsers/>
+      <GetRandomUser/>
+      {/* <GetAllUsers/> */}
     </div>
   );
 }

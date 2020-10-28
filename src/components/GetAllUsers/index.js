@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import API from '../../utils/API';
-import AllResultList from '../AllResultList.js';
+import ResultList from '../ResultList';
 
 
 class GetAllUsers extends Component {
@@ -37,7 +37,7 @@ class GetAllUsers extends Component {
     return (
       <>
       <h1>All Users</h1>
-      <AllResultList
+      <ResultList
         results={ allResults }
       />
       </>
