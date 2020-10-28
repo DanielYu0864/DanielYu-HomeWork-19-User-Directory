@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from '../../utils/API';
 import ResultList from '../ResultList';
 
-class GetMaleUsers extends Component {
+class GetFemaleUsers extends Component {
   state = {
     results: []
   };
@@ -12,10 +12,8 @@ class GetMaleUsers extends Component {
   }
 
   renderUserInfo = () => {
-    API.getUsersByGender('male')
+    API.getUsersByGender('female')
       .then(res => {
-        // const gender = res.data.results.filter(info => info.gender === 'male');
-        // console.log(gender);
         this.setState({ results: res.data.results });
       })
       .catch(err => console.log(err));
@@ -34,9 +32,7 @@ class GetMaleUsers extends Component {
     console.log(allResults);
     return (
       <>
-      <h1>Male Users</h1>
-      {/* <button onClick={ () => this.displayByGender(allResults, 'male')}>Male</button>
-      <button onClick={ () => this.displayByGender(allResults, 'female')}>Female</button> */}
+      <h1>Female Users</h1>
       <div id='resultList'>
       </div>
       <ResultList
@@ -47,4 +43,4 @@ class GetMaleUsers extends Component {
   }
 }
 
-export default GetMaleUsers
+export default GetFemaleUsers
