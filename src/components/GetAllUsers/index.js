@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import API from '../../utils/API';
+import GetFemaleUsers from '../GetFemaleUsers';
 import ResultList from '../ResultList';
 
 
 class GetAllUsers extends Component {
-  state = {
-    results: []
-  };
+  constructor(props) {
+    super(props)
+
+    this.state = {
+       error: null,
+       isLoaded: false,
+       results: []
+    }
+  }
+
 
   componentDidMount() {
     this.renderUserInfo();
@@ -15,7 +23,12 @@ class GetAllUsers extends Component {
   renderUserInfo = () => {
     API.getAllUsers()
       .then(res => {
-        this.setState({ results: res.data.results });
+        // console.log(res.data.results)
+        this.setState({
+          isLoaded: true,
+          results: res.data.results
+        });
+        // console.log(this.state.isLoaded)
       })
       .catch(err => console.log(err));
   }
@@ -27,21 +40,20 @@ class GetAllUsers extends Component {
   }
 
   render() {
-    if(this.state.results.length < 50) {
-      return <h1>Loading</h1>
-    }
-    const allResults = this.state.results;
-    // console.log(allResults);
-
-
-    return (
-      <>
-      <h1>All Users</h1>
-      <ResultList
-        results={ allResults }
-      />
-      </>
+    const {isLoaded, results} = this.state;
+    if(isLoaded === false) {
+      return <div>Loading ...</div>
+    } else {
+      return (
+        <>
+        <h1>All Users</h1>
+        <ResultList
+          results={ results }
+        />
+        {/* <GetFemaleUsers value={ results }/> */}
+        </>
     );
+    }
   }
 }
 

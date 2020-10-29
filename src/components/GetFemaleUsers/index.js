@@ -4,11 +4,21 @@ import ResultList from '../ResultList';
 
 class GetFemaleUsers extends Component {
   state = {
+    isLoaded: false,
     results: []
   };
 
   componentDidMount() {
-    this.renderUserInfo();
+    // this.renderUserInfo();
+    this.renderFemale();
+  }
+
+  renderFemale = () => {
+    const arr = this.props.value.filter(info => info.gender === 'female');
+    this.setState({
+      isLoaded: true,
+      results: arr
+    })
   }
 
   renderUserInfo = () => {
@@ -19,24 +29,19 @@ class GetFemaleUsers extends Component {
       .catch(err => console.log(err));
   }
 
-  // displayByGender = (allInfo, g) => {
-  //   const gender = allInfo.filter(info => info.gender === g);
-  //   this.setState({ resluts: gender });
-  // }
+
 
   render() {
-    while (this.state.results.length < 25 ) {
+    const { isLoaded, results} = this.state
+    while (isLoaded === false ) {
       return <h1>Loading</h1>
     }
-    const allResults = this.state.results;
-    console.log(allResults);
+    console.log(results);
     return (
       <>
       <h1>Female Users</h1>
-      <div id='resultList'>
-      </div>
       <ResultList
-        results={ allResults }
+        results={ results }
       />
       </>
     )

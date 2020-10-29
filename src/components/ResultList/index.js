@@ -3,7 +3,7 @@ import './style.css'
 function AllResultList(props) {
 
   const results = props.results;
-  console.log(props.results)
+  // console.log(props.results)
   return (
     // <h1>List</h1>
     <>
