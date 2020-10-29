@@ -12,7 +12,6 @@ function App() {
       {/* <GetRandomUser/> */}
       <GetAllUsers/>
       {/* <GetMaleUsers/> */}
-      {/* <GetFemaleUsers/> */}
     </div>
   );
 }

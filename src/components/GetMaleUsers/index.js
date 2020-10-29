@@ -4,43 +4,43 @@ import ResultList from '../ResultList';
 
 class GetMaleUsers extends Component {
   state = {
+    isLoaded: false,
     results: []
   };
 
   componentDidMount() {
-    this.renderUserInfo();
+    this.renderFemale();
+  }
+
+  renderFemale = () => {
+    const arr = this.props.value.filter(info => info.gender === 'male');
+    this.setState({
+      isLoaded: true,
+      results: arr
+    })
   }
 
   renderUserInfo = () => {
-    API.getUsersByGender('male')
+    API.getUsersByGender('female')
       .then(res => {
-        // const gender = res.data.results.filter(info => info.gender === 'male');
-        // console.log(gender);
         this.setState({ results: res.data.results });
       })
       .catch(err => console.log(err));
   }
 
-  // displayByGender = (allInfo, g) => {
-  //   const gender = allInfo.filter(info => info.gender === g);
-  //   this.setState({ resluts: gender });
-  // }
+
 
   render() {
-    while (this.state.results.length < 25 ) {
+    const { isLoaded, results} = this.state
+    while (isLoaded === false ) {
       return <h1>Loading</h1>
     }
-    const allResults = this.state.results;
-    console.log(allResults);
+    console.log(results);
     return (
       <>
-      <h1>Male Users</h1>
-      {/* <button onClick={ () => this.displayByGender(allResults, 'male')}>Male</button>
-      <button onClick={ () => this.displayByGender(allResults, 'female')}>Female</button> */}
-      <div id='resultList'>
-      </div>
+      <h1>Female Users</h1>
       <ResultList
-        results={ allResults }
+        results={ results }
       />
       </>
     )
