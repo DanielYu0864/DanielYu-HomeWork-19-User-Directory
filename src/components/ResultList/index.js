@@ -4,6 +4,7 @@ import NameComp from '../NameComp'
 import ImageComp from '../ImageComp';
 import GenderComp from '../GenderComp';
 import EmailComp from '../EmailComp';
+import PhoneComp from '../PhoneComp';
 function AllResultList(props) {
   const count1To10 = (string) => {
     // make birthday readable
@@ -25,8 +26,8 @@ function AllResultList(props) {
             <GenderComp gender={ result.gender }/>
             <li className='list-group-items'>Birthday: <span>{ count1To10(result.dob.date) }</span></li>
             <EmailComp email={ result.email }/>
-            <li className='list-group-items'>Phone: <span>{ result.phone }</span></li>
-        <li className='list-group-items'>Address: <span>{ result.location.street.number } { result.location.street.name } { result.location.city }, { result.location.state }</span></li>
+            <PhoneComp phone={ result.phone }/>
+            <li className='list-group-items'>Address: <span>{ result.location.street.number } { result.location.street.name } { result.location.city }, { result.location.state }</span></li>
           </ul>
         ))
       }
