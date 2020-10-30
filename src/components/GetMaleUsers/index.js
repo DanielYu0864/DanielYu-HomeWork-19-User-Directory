@@ -20,22 +20,13 @@ class GetMaleUsers extends Component {
     })
   }
 
-  // renderUserInfo = () => {
-  //   API.getUsersByGender('female')
-  //     .then(res => {
-  //       this.setState({ results: res.data.results });
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-
-
 
   render() {
     const { isLoaded, results} = this.state
     while (isLoaded === false ) {
       return <h1>Loading</h1>
     }
-    console.log(results);
+    // console.log(results);
     return (
       <>
       <h1>Female Users</h1>
