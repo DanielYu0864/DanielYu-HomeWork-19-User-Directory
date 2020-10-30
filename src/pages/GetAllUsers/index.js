@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import API from '../../utils/API';
 import GetFemaleUsers from '../GetFemaleUsers';
 import GetMaleUsers from '../GetMaleUsers';
-import OrderByAge from '../OrderByAge';
-import ResultList from '../ResultList';
+import OrderByAge from '../../components/OrderByAge';
+import ResultList from '../../components/ResultList';
 
 
 class GetAllUsers extends Component {
@@ -49,9 +49,12 @@ class GetAllUsers extends Component {
       return (
         <>
         <h1>All Users</h1>
-        {/* <ResultList results={ results } /> */}
-        {/* <OrderByAge value={ results }/> */}
-        {/* <GetFemaleUsers value={ results }/> */}
+        <ResultList results={ results } />
+        <h2>Order By age</h2>
+        <OrderByAge value={ results }/>
+        <h2>Female</h2>
+        <GetFemaleUsers value={ results }/>
+        <h2>Male</h2>
         <GetMaleUsers value={ results }/>
         </>
     );

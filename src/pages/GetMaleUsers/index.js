@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import ResultList from '../ResultList';
+import ResultList from '../../components/ResultList';
 
 class GetMaleUsers extends Component {
   state = {
