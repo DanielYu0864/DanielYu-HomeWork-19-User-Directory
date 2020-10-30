@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ImageComp({src}) {
-  return <img className='list-group-items' src={src}/>
+  return <img src={src}/>
 }
 
 export default ImageComp

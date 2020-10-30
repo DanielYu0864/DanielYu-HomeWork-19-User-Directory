@@ -50,9 +50,9 @@ class GetAllUsers extends Component {
         <>
         <h1>All Users</h1>
         {/* <ResultList results={ results } /> */}
-        <OrderByAge value={ results }/>
+        {/* <OrderByAge value={ results }/> */}
         {/* <GetFemaleUsers value={ results }/> */}
-        {/* <GetMaleUsers value={ results }/> */}
+        <GetMaleUsers value={ results }/>
         </>
     );
     }
