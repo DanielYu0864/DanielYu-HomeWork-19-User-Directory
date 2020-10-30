@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import API from '../../utils/API';
 import GetFemaleUsers from '../GetFemaleUsers';
 import GetMaleUsers from '../GetMaleUsers';
+import OrderByAge from '../OrderByAge';
 import ResultList from '../ResultList';
 
 
@@ -24,7 +25,7 @@ class GetAllUsers extends Component {
   renderUserInfo = () => {
     API.getAllUsers()
       .then(res => {
-        // console.log(res.data.results)
+        console.log(res.data.results)
         this.setState({
           isLoaded: true,
           results: res.data.results
@@ -48,11 +49,10 @@ class GetAllUsers extends Component {
       return (
         <>
         <h1>All Users</h1>
-        {/* <ResultList
-          results={ results }
-        /> */}
+        {/* <ResultList results={ results } /> */}
+        <OrderByAge value={ results }/>
         {/* <GetFemaleUsers value={ results }/> */}
-        <GetMaleUsers value={ results }/>
+        {/* <GetMaleUsers value={ results }/> */}
         </>
     );
     }
