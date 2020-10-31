@@ -6,7 +6,7 @@ function NavTabs() {
   return (
     <ul className="nav nav-tabs">
       User Directory
-      <li className="nav-item">
+      <li className="nav-item list-group-items">
         <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Random User
         </Link>
