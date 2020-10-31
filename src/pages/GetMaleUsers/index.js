@@ -9,10 +9,13 @@ class GetMaleUsers extends Component {
   };
 
   componentDidMount() {
-    this.renderFemale();
+    if(this.props) {
+      this.renderFemale();
+    }
   }
 
   renderFemale = () => {
+    console.log(this.props);
     const arr = this.props.value.filter(info => info.gender === 'male');
     this.setState({
       isLoaded: true,
@@ -29,7 +32,7 @@ class GetMaleUsers extends Component {
     // console.log(results);
     return (
       <>
-      <h1>Female Users</h1>
+      <h1>Male Users</h1>
       <ResultList results={ results }/>
       </>
     )

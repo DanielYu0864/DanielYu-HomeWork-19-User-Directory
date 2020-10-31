@@ -21,13 +21,13 @@ class GetFemaleUsers extends Component {
     })
   }
 
-  renderUserInfo = () => {
-    API.getUsersByGender('female')
-      .then(res => {
-        this.setState({ results: res.data.results });
-      })
-      .catch(err => console.log(err));
-  }
+  // renderUserInfo = () => {
+  //   API.getUsersByGender('female')
+  //     .then(res => {
+  //       this.setState({ results: res.data.results });
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
 
 
@@ -40,9 +40,9 @@ class GetFemaleUsers extends Component {
     return (
       <>
       <h1>Female Users</h1>
-      <ResultList
-        results={ results }
-      />
+      {/* <button>Female</button> */}
+
+      <ResultList results={ results }/>
       </>
     )
   }

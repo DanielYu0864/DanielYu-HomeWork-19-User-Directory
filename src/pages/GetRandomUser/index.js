@@ -10,24 +10,29 @@ class GetRandomUser extends Component {
   };
 
   componentDidMount() {
-    this.renderUserInfo();
+    if(this.props) {
+      this.renderUserInfo();
+    }
+  }
+
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
   }
 
   renderUserInfo = () => {
-    API.getAllUsers()
-      .then(res => {
-        console.log(res.data.results);
-        this.setState({ result: res.data.results[0] })
-      })
-      .catch(err => console.log(err));
+    const arr = this.props.value
+    let random = this.getRandomInt(arr.length);
+    // console.log(random);
+    this.setState({ result: arr[random] });
   }
 
   render() {
     if(this.state.result.length === 0) {
       return <h1>Loading</h1>
     }
-
     const { result } = this.state;
+    console.log(result)
+
     return (
       <div>
         <h1>Random User</h1>
