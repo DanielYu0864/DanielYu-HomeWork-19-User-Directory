@@ -7,6 +7,7 @@ import ResultList from '../../components/ResultList';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavTabs from '../../components/NavTabs';
 import GetRandomUser from '../GetRandomUser';
+import './style.css';
 
 // function GetAllUsers() {
 //   const [error, setError] = useState(null);

@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import GetAllUsers from'./pages/GetAllUsers';
 import NavTabs from './components/NavTabs';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Main Page</h1>
+    <div style={{background: 'bottom'}} className="App">
+      <h1>User Directory</h1>
       <GetAllUsers/>
+      <Footer/>
     </div>
   );
 }

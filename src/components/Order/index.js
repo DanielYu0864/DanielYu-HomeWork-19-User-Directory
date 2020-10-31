@@ -49,7 +49,7 @@ export class Order extends Component {
     // console.log(results);
     return (
       <>
-        <div>Order By Age</div>
+        <h1>Order By Age</h1>
         <ResultList results={ results }/>
       </>
     )
