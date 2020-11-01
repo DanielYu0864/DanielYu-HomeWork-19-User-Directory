@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import API from '../../utils/API';
 import ResultList from '../../components/ResultList';
 
 
@@ -14,7 +13,7 @@ class GetRandomUser extends Component {
       this.renderUserInfo();
     }
   }
-
+  // randomly pike a user and render the component
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
@@ -22,7 +21,6 @@ class GetRandomUser extends Component {
   renderUserInfo = () => {
     const arr = this.props.value
     let random = this.getRandomInt(arr.length);
-    // console.log(random);
     this.setState({ result: arr[random] });
   }
 

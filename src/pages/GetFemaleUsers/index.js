@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import API from '../../utils/API';
 import ResultList from '../../components/ResultList';
 
 class GetFemaleUsers extends Component {
@@ -9,10 +8,9 @@ class GetFemaleUsers extends Component {
   };
 
   componentDidMount() {
-    // this.renderUserInfo();
     this.renderFemale();
-  }
-
+    }
+  // filter for only female user
   renderFemale = () => {
     const arr = this.props.value.filter(info => info.gender === 'female');
     this.setState({
@@ -20,16 +18,6 @@ class GetFemaleUsers extends Component {
       results: arr
     })
   }
-
-  // renderUserInfo = () => {
-  //   API.getUsersByGender('female')
-  //     .then(res => {
-  //       this.setState({ results: res.data.results });
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-
-
 
   render() {
     const { isLoaded, results} = this.state
@@ -40,8 +28,6 @@ class GetFemaleUsers extends Component {
     return (
       <>
       <h1>Female Users</h1>
-      {/* <button>Female</button> */}
-
       <ResultList results={ results }/>
       </>
     )

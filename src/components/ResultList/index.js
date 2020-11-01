@@ -16,6 +16,7 @@ function AllResultList(props) {
     return output
   }
   const results = props.results;
+  // Result List component will functional loop through the array and render the list component
   return (
     <>
       {

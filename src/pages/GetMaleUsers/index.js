@@ -13,7 +13,7 @@ class GetMaleUsers extends Component {
       this.renderFemale();
     }
   }
-
+  // filter for only male user
   renderFemale = () => {
     console.log(this.props);
     const arr = this.props.value.filter(info => info.gender === 'male');
@@ -29,7 +29,6 @@ class GetMaleUsers extends Component {
     while (isLoaded === false ) {
       return <h1>Loading</h1>
     }
-    // console.log(results);
     return (
       <>
       <h1>Male Users</h1>

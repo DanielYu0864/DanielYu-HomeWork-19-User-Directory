@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
+// nav component handling the react router and link for render the component
 function NavTabs() {
   const location = useLocation();
   return (

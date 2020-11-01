@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import GetAllUsers from'./pages/GetAllUsers';
-import NavTabs from './components/NavTabs';
 import Footer from './components/Footer';
 
 function App() {
