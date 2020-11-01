@@ -9,37 +9,6 @@ import NavTabs from '../../components/NavTabs';
 import GetRandomUser from '../GetRandomUser';
 import './style.css';
 
-// function GetAllUsers() {
-//   const [error, setError] = useState(null);
-//   const [isLoaded, setIsLoaded] = useState(false);
-//   const [viewGender, setViewGender] = useState(null);
-//   const [results, setResults] = useState([]);
-
-//   useEffect(() => {
-//     return renderUserInfo();
-//   }, []);
-
-//   const renderUserInfo = () => {
-//     API.getAllUsers()
-//       .then(res => {
-//         console.log('API', res.data.results)
-//         return res.data.results;
-//       })
-//       .then(res => {
-
-//         setIsLoaded(true);
-//         setResults([res]);
-//         console.log('isLoaded:', isLoaded);
-//         console.log('Reaults:', results);
-//       })
-//       .catch(err => console.log(err));
-//   }
-//   if(isLoaded !== true) {
-//     return <div>Loading</div>
-//   } else {
-//     return (<GetFemaleUsers value={ results }/>)
-//   }
-// }
 
 class GetAllUsers extends Component {
   constructor(props) {
@@ -59,18 +28,19 @@ class GetAllUsers extends Component {
     this.renderUserInfo();
   }
 
-  componentDidUpdate() {
-    // this.renderUserInfo();
-  }
-
   renderUserInfo = () => {
     API.getAllUsers()
       .then(res => {
         // console.log(res.data.results)
+        const arr = res.data.results.sort((a, b) => {
+          const idA = a.id.value[0];
+          const idB = b.id.value[0];
+          return idA - idB;
+        });
         return this.setState({
           order: 'age',
           isLoaded: true,
-          results: res.data.results
+          results: arr
         });
         // console.log(this.state.isLoaded)
       })
