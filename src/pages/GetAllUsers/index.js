@@ -56,7 +56,6 @@ class GetAllUsers extends Component {
 
         <Router>
           <NavTabs/>
-          <Route exact path='/' render={ () => <GetRandomUser value={ results }/> }/>
           <Route exact path='/all' render={ () =>  (
             <>
             <h1>All Users</h1>
@@ -66,6 +65,7 @@ class GetAllUsers extends Component {
           <Route exact path='/male' render={ () => <GetMaleUsers value={ results } /> }/>
           <Route exact path='/female' render={ () => <GetFemaleUsers value={ results } /> }/>
           <Route exact path='/order' render={ () => <Order value={ results } /> }/>
+          <Route path='*' render={ () => <GetRandomUser value={ results }/> }/>
         </Router>
     );
     }
