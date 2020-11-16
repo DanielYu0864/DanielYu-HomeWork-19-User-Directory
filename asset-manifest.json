@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/DanielYu-HomeWork-19-User-Directory/static/css/main.775259f1.chunk.css",
-    "main.js": "/DanielYu-HomeWork-19-User-Directory/static/js/main.a6deaba9.chunk.js",
-    "main.js.map": "/DanielYu-HomeWork-19-User-Directory/static/js/main.a6deaba9.chunk.js.map",
+    "main.js": "/DanielYu-HomeWork-19-User-Directory/static/js/main.7ccf6555.chunk.js",
+    "main.js.map": "/DanielYu-HomeWork-19-User-Directory/static/js/main.7ccf6555.chunk.js.map",
     "runtime-main.js": "/DanielYu-HomeWork-19-User-Directory/static/js/runtime-main.58b3bc8a.js",
     "runtime-main.js.map": "/DanielYu-HomeWork-19-User-Directory/static/js/runtime-main.58b3bc8a.js.map",
     "static/js/2.62ba5ca0.chunk.js": "/DanielYu-HomeWork-19-User-Directory/static/js/2.62ba5ca0.chunk.js",
@@ -11,13 +11,12 @@
     "static/js/3.862ef914.chunk.js.map": "/DanielYu-HomeWork-19-User-Directory/static/js/3.862ef914.chunk.js.map",
     "index.html": "/DanielYu-HomeWork-19-User-Directory/index.html",
     "static/css/main.775259f1.chunk.css.map": "/DanielYu-HomeWork-19-User-Directory/static/css/main.775259f1.chunk.css.map",
-    "static/js/2.62ba5ca0.chunk.js.LICENSE.txt": "/DanielYu-HomeWork-19-User-Directory/static/js/2.62ba5ca0.chunk.js.LICENSE.txt",
-    "static/media/logo.103b5fa1.svg": "/DanielYu-HomeWork-19-User-Directory/static/media/logo.103b5fa1.svg"
+    "static/js/2.62ba5ca0.chunk.js.LICENSE.txt": "/DanielYu-HomeWork-19-User-Directory/static/js/2.62ba5ca0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.58b3bc8a.js",
     "static/js/2.62ba5ca0.chunk.js",
     "static/css/main.775259f1.chunk.css",
-    "static/js/main.a6deaba9.chunk.js"
+    "static/js/main.7ccf6555.chunk.js"
   ]
 }
